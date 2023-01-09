@@ -15,44 +15,44 @@ sqa_criteria:
     repos:
       github.com/ecmwf/cfgrib git:
         commands:
-        - /usr/bin/env sh .sqa/script.shabby-heliotrope-urchin.sh
-        container: qc.acc_tacky-white-magpie
+        - /usr/bin/env sh .sqa/script.pretty-firebrick-uguisu.sh
+        container: qc.acc_tacky-russet-chipmunk
   QC.Doc:
     repos:
       github.com/ecmwf/cfgrib find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.clammy-pink-civet.sh
-        container: qc.doc_tacky-chocolate-dingo
+        - /usr/bin/env sh .sqa/script.flaky-teal-bracke.sh
+        container: qc.doc_stealthy-white-ragdoll
       github.com/ecmwf/cfgrib git:
         commands:
-        - /usr/bin/env sh .sqa/script.baggy-mustard-chameleon.sh
-        container: qc.doc_breezy-coral-millipede
+        - /usr/bin/env sh .sqa/script.woolly-cardinal-bird.sh
+        container: qc.doc_hilly-burgundy-shrimp
       github.com/ecmwf/cfgrib restructuredtext-lint:
         commands:
-        - /usr/bin/env sh .sqa/script.silly-peach-saola.sh
-        container: qc.doc_sleepy-cyan-fish
+        - /usr/bin/env sh .sqa/script.skanky-lemon-sparrow.sh
+        container: qc.doc_sleazy-black-cuscus
   QC.Lic:
     repos:
       github.com/ecmwf/cfgrib licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.woolly-tangerine-tapir.sh
-        container: qc.lic_gloppy-eggplant-chameleon
+        - /usr/bin/env sh .sqa/script.stealthy-gamboge-robin.sh
+        container: qc.lic_surly-emerald-bongo
   QC.Sec:
     repos:
       github.com/ecmwf/cfgrib bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.sloppy-chartreuse-bonobo.sh
-        container: qc.sec_queasy-bistre-bear
+        - /usr/bin/env sh .sqa/script.clammy-rust-gerbil.sh
+        container: qc.sec_gimpy-olivine-burmese
   QC.Sty:
     repos:
       github.com/ecmwf/cfgrib flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.snippy-tangerine-uakari.sh
-        container: qc.sty_muggy-indigo-insect
+        - /usr/bin/env sh .sqa/script.goopy-razzmatazz-setter.sh
+        container: qc.sty_messy-gold-dollar
   QC.Ver:
     repos:
       github.com/ecmwf/cfgrib get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.clammy-chartreuse-retriever.sh
-        container: qc.ver_gamy-eggplant-bandicoot
+        - /usr/bin/env sh .sqa/script.scummy-ochre-grasshopper.sh
+        container: qc.ver_dorky-olivine-bird
 timeout: 5400
