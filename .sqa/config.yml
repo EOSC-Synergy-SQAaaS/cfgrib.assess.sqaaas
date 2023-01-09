@@ -1,0 +1,58 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.7
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/ecmwf/cfgrib:
+      branch: master
+      repo: https://github.com/ecmwf/cfgrib
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/ecmwf/cfgrib git:
+        commands:
+        - /usr/bin/env sh .sqa/script.shabby-heliotrope-urchin.sh
+        container: qc.acc_tacky-white-magpie
+  QC.Doc:
+    repos:
+      github.com/ecmwf/cfgrib find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.clammy-pink-civet.sh
+        container: qc.doc_tacky-chocolate-dingo
+      github.com/ecmwf/cfgrib git:
+        commands:
+        - /usr/bin/env sh .sqa/script.baggy-mustard-chameleon.sh
+        container: qc.doc_breezy-coral-millipede
+      github.com/ecmwf/cfgrib restructuredtext-lint:
+        commands:
+        - /usr/bin/env sh .sqa/script.silly-peach-saola.sh
+        container: qc.doc_sleepy-cyan-fish
+  QC.Lic:
+    repos:
+      github.com/ecmwf/cfgrib licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.woolly-tangerine-tapir.sh
+        container: qc.lic_gloppy-eggplant-chameleon
+  QC.Sec:
+    repos:
+      github.com/ecmwf/cfgrib bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.sloppy-chartreuse-bonobo.sh
+        container: qc.sec_queasy-bistre-bear
+  QC.Sty:
+    repos:
+      github.com/ecmwf/cfgrib flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.snippy-tangerine-uakari.sh
+        container: qc.sty_muggy-indigo-insect
+  QC.Ver:
+    repos:
+      github.com/ecmwf/cfgrib get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.clammy-chartreuse-retriever.sh
+        container: qc.ver_gamy-eggplant-bandicoot
+timeout: 5400
